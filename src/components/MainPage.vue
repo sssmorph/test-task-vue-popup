@@ -1,4 +1,4 @@
-<!-- скрипт -->
+
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
@@ -24,7 +24,7 @@ const count = ref(0)
   </div>
 
 </template>
-<!-- стили -->
+
 <style scoped>
 
   .about-me-title{

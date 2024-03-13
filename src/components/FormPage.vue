@@ -35,12 +35,10 @@ const v$ = useVuelidate(rules, formData);
 const submitEvent = () => {
   v$.value.$touch();
   if (!v$.value.$error) {
-    // Form is valid, submit the data
     console.log("Form data submitted:", formData.value);
     arr.value = Object.entries(formData.value)
 
   } else {
-    // Form is invalid, display validation errors
     console.log("Form validation errors:", v$.value);
   }
 }
@@ -53,11 +51,10 @@ const emailError = computed(()=>{return v$.value.email.$errors})
         <Button class="button-container__button" @click="toggleModal(true)">Начать</button>
     </div>
     
-    <!-- попап окно -->
 
       <div v-if="showModal" class="popup-block__background" @click="toggleModal(false)">
         <div class="popup-block" @click.stop>
-          <!-- <pre>{{ v$?.email }}</pre> -->
+
             <h2>Введите данные</h2>
           <form action="" class="form-block" @submit.prevent="submitEvent">
               <div class="input-container">
@@ -76,7 +73,7 @@ const emailError = computed(()=>{return v$.value.email.$errors})
     <div id="data-form">
         <div class="popup-data">
             <ul class="popup-data__list">
-                <!-- поле для жсон строки -->
+
                 <li class="json-text">{{ formData }}</li> 
                 <ul class="data-container" id="v-for-object">
                   <li v-for="item in arr"> 
@@ -90,7 +87,7 @@ const emailError = computed(()=>{return v$.value.email.$errors})
 </template>
 
 
-<!-- стили -->
+
   <style scoped>
   .button-container{
     position: fixed;
